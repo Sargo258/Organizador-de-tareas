@@ -31,7 +31,7 @@ function AppUI() {
       <TodoList>
         {error && <TodosError error={error} />}
         {loading && new Array(5).fill(1).map((a, i) => <TodosLoading key={i} />)}
-        
+        {(!loading && !searchedTodos.length) && <EmptyTodos/>}
         
         {searchedTodos.map(todo => (
           <TodoItem
